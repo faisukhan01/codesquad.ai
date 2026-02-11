@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+
+    --primary: 228 66% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 230 25% 95%;
+    --secondary-foreground: 0 0% 7%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 228 66% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 228 66% 47%;
+
+    --radius: 0.75rem;
+
+    --relay-blue: 228 66% 47%;
+    --relay-blue-light: 225 73% 57%;
+    --relay-purple: 262 52% 47%;
+    --relay-card-bg: 230 40% 98%;
+    --relay-card-border: 225 30% 92%;
+    --relay-text-primary: 0 0% 7%;
+    --relay-text-secondary: 220 9% 46%;
+    --relay-hero-gradient: linear-gradient(
+      135deg,
+      hsl(200 100% 95%) 0%,
+      hsl(280 85% 95%) 15%,
+      hsl(340 90% 95%) 30%,
+      hsl(160 80% 95%) 45%,
+      hsl(50 100% 95%) 60%,
+      hsl(220 85% 95%) 75%,
+      hsl(300 80% 95%) 90%,
+      hsl(180 85% 95%) 100%
+    );
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 228 66% 57%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 65%;
+    --accent: 228 66% 57%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 228 66% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  html {
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* Agent card styles */
+  .agent-card-green {
+    background: linear-gradient(145deg, hsl(140 30% 95%), hsl(160 25% 92%));
+    border: 1px solid hsl(150 20% 90%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .agent-card-green:hover {
+    box-shadow: 0 8px 30px rgba(100, 180, 130, 0.15);
+  }
+  .agent-card-teal {
+    background: linear-gradient(145deg, hsl(170 30% 94%), hsl(180 25% 91%));
+    border: 1px solid hsl(175 20% 89%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .agent-card-teal:hover {
+    box-shadow: 0 8px 30px rgba(80, 170, 160, 0.15);
+  }
+  .agent-card-amber {
+    background: linear-gradient(145deg, hsl(40 40% 95%), hsl(35 35% 92%));
+    border: 1px solid hsl(38 30% 90%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .agent-card-amber:hover {
+    box-shadow: 0 8px 30px rgba(200, 160, 60, 0.15);
+  }
+  .agent-card-blue {
+    background: linear-gradient(145deg, hsl(220 40% 95%), hsl(230 35% 93%));
+    border: 1px solid hsl(225 25% 91%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .agent-card-blue:hover {
+    box-shadow: 0 8px 30px rgba(80, 120, 200, 0.15);
+  }
+  .agent-card-coral {
+    background: linear-gradient(145deg, hsl(15 40% 95%), hsl(10 35% 93%));
+    border: 1px solid hsl(12 25% 91%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .agent-card-coral:hover {
+    box-shadow: 0 8px 30px rgba(200, 100, 80, 0.15);
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: var(--relay-hero-gradient);
+    position: relative;
+  }
+
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(147, 197, 253, 0.3) 0%, rgba(196, 181, 253, 0.2) 40%, transparent 70%);
+    top: -250px;
+    right: -200px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .hero-gradient::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(167, 243, 208, 0.25) 0%, rgba(252, 231, 243, 0.2) 50%, transparent 70%);
+    bottom: -200px;
+    left: -150px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-gradient::before {
+      width: 400px;
+      height: 400px;
+      right: -150px;
+    }
+    
+    .hero-gradient::after {
+      width: 350px;
+      height: 350px;
+      left: -100px;
+    }
+  }
+
+  .text-gradient-blue {
+    background: linear-gradient(135deg, hsl(228 66% 47%), hsl(262 52% 47%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .marquee-reverse {
+    animation: marquee-reverse 30s linear infinite;
+  }
+
+  .marquee-slow {
+    animation: marquee 45s linear infinite;
+  }
+
+  .pause-animation:hover {
+    animation-play-state: paused;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
