@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
@@ -77,16 +79,16 @@ const TemplatesSection = () => {
   };
 
   return (
-    <section id="templates" className="py-20 bg-background overflow-hidden">
+    <section id="templates" className="py-16 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-[1.2] tracking-tight">
+          <h2 className="font-bold text-foreground leading-[1.2] tracking-tight" style={{ fontSize: '30px' }}>
             Don't just take our words for it, take theirs.
           </h2>
         </motion.div>

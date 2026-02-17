@@ -1,12 +1,14 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 
 const VideoSection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-12 bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-10"
+          className="text-center mb-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}

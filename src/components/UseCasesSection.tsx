@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { TrendingUp, Headphones, Settings, BarChart3, Megaphone, DollarSign, type LucideIcon } from "lucide-react";
 
@@ -63,16 +65,16 @@ const useCases: UseCase[] = [
 
 const UseCasesSection = () => {
   return (
-    <section className="py-20 hero-gradient">
+    <section className="py-12 hero-gradient">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-[1.1] tracking-tight">
+          <h2 className="font-bold text-foreground leading-[1.1] tracking-tight" style={{ fontSize: '30px' }}>
             Create custom agents<br className="hidden sm:block" />
             <span className="text-gradient-blue">for any use case</span>
           </h2>

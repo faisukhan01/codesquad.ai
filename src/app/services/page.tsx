@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -66,7 +68,7 @@ const services = [
   }
 ];
 
-const Services = () => {
+export default function Services() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
@@ -323,6 +325,4 @@ const Services = () => {
       <Footer />
     </div>
   );
-};
-
-export default Services;
+}

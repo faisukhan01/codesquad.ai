@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 const agentCards = [
@@ -45,7 +47,7 @@ const agentCards = [
 
 const CTASection = () => {
   return (
-    <section className="py-16 relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100">
+    <section className="py-12 relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,12 +55,12 @@ const CTASection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-700 tracking-tight mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-700 tracking-tight mb-4">
             Create your first agent today
           </h2>
           
           <motion.div
-            className="mb-12"
+            className="mb-8"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

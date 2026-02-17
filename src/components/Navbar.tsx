@@ -1,12 +1,16 @@
+"use client";
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 import codesquadLogo from "../assets/codesquadlogo.png";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   return (
     <motion.nav
@@ -18,35 +22,40 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[60px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img src={codesquadLogo} alt="CodeSquad" className="h-36" />
+          <Link href="/" className="flex items-center">
+            <Image src={codesquadLogo} alt="CodeSquad" className="h-36 w-auto" />
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-7">
+          {/* Desktop nav - centered */}
+          <div className="hidden md:flex items-center gap-7 absolute left-1/2 transform -translate-x-1/2">
             <Link 
-              to="/" 
+              href="/" 
               className={`text-[13px] font-medium transition-colors duration-200 ${
-                location.pathname === "/" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                pathname === "/" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
               }`}
             >
               Home
             </Link>
             <Link 
-              to="/services" 
+              href="/workflows" 
               className={`text-[13px] font-medium transition-colors duration-200 ${
-                location.pathname === "/services" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                pathname === "/workflows" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              Service
+              Workflows
             </Link>
-            <span className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-not-allowed">Portfolio</span>
           </div>
 
-          {/* CTA */}
-          <div className="hidden md:flex items-center gap-2">
-            <button className="text-[13px] font-semibold bg-foreground text-background px-5 py-2 rounded-full hover:opacity-90 transition-all duration-200 shadow-sm">
-              Start for free
+          {/* CTA Button - desktop */}
+          <div className="hidden md:block">
+            <button className="group relative px-4 py-2 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-[13px] font-semibold rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 overflow-hidden">
+              <span className="relative z-10 flex items-center gap-1.5">
+                Create your customized agent
+                <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
           </div>
 
@@ -68,27 +77,31 @@ const Navbar = () => {
           >
             <div className="px-4 py-4 space-y-3">
               <Link 
-                to="/" 
+                href="/" 
                 className={`block text-sm font-medium py-1 ${
-                  location.pathname === "/" ? "text-foreground" : "text-muted-foreground"
+                  pathname === "/" ? "text-foreground" : "text-muted-foreground"
                 }`}
                 onClick={() => setMobileOpen(false)}
               >
                 Home
               </Link>
               <Link 
-                to="/services" 
+                href="/workflows" 
                 className={`block text-sm font-medium py-1 ${
-                  location.pathname === "/services" ? "text-foreground" : "text-muted-foreground"
+                  pathname === "/workflows" ? "text-foreground" : "text-muted-foreground"
                 }`}
                 onClick={() => setMobileOpen(false)}
               >
-                Service
+                Workflows
               </Link>
-              <span className="block text-sm font-medium text-muted-foreground py-1 cursor-not-allowed">Portfolio</span>
-              <div className="pt-3 border-t border-border space-y-2">
-                <button className="w-full text-sm font-semibold bg-foreground text-background px-5 py-2.5 rounded-full">Start for free</button>
-              </div>
+              <button className="w-full mt-2 px-4 py-2 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-sm font-semibold rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                <span className="flex items-center justify-center gap-1.5">
+                  Create your customized agent
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              </button>
             </div>
           </motion.div>
         )}

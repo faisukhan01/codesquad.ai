@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 const integrationRows = [
@@ -26,16 +28,16 @@ const integrationRows = [
 
 const IntegrationsSection = () => {
   return (
-    <section id="integrations" className="py-20 hero-gradient overflow-hidden">
+    <section id="integrations" className="py-12 hero-gradient overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-[1.1] tracking-tight">
+          <h2 className="font-bold text-foreground leading-[1.1] tracking-tight" style={{ fontSize: '30px' }}>
             CodeSquad works with<br className="hidden sm:block" />
             <span className="text-gradient-blue">all your favorite apps</span>
           </h2>
@@ -66,7 +68,7 @@ const IntegrationsSection = () => {
       </div>
 
       <motion.div
-        className="mt-12 text-center"
+        className="mt-8 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

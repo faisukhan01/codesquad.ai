@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
@@ -72,16 +74,16 @@ const avatarColors = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-20 bg-background overflow-hidden">
+    <section className="py-12 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+          <h2 className="font-bold text-foreground tracking-tight" style={{ fontSize: '30px' }}>
             People love CodeSquad
           </h2>
         </motion.div>
@@ -144,7 +146,7 @@ const TestimonialsSection = () => {
 
         {/* Ratings */}
         <motion.div
-          className="mt-16 flex flex-wrap items-center justify-center gap-8"
+          className="mt-10 flex flex-wrap items-center justify-center gap-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
