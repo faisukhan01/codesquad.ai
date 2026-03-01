@@ -1,24 +1,21 @@
 const footerLinks = {
   Product: [
+    { label: "AI Workflow Systems", href: "/workflows" },
+    { label: "AI Services", href: "/services" },
     { label: "Integrations", href: "#integrations" },
-    { label: "Templates", href: "#templates" },
-    { label: "AI agents for marketing", href: "#" },
-    { label: "Pricing", href: "#pricing" },
+    { label: "Customer stories", href: "#templates" },
   ],
   Learn: [
-    { label: "Videos", href: "https://www.youtube.com/@codesquad" },
-    { label: "Live events", href: "#" },
-    { label: "AI Agent Academy", href: "#" },
-    { label: "Community", href: "#" },
-    { label: "Documentation", href: "#" },
-    { label: "Blog", href: "#" },
+    { label: "Workflows for B2B services", href: "/workflows" },
+    { label: "Service capabilities", href: "/services" },
+    { label: "Client testimonials", href: "#templates" },
+    { label: "YouTube tutorials", href: "https://www.youtube.com/@codesquad" },
+    { label: "LinkedIn insights", href: "https://www.linkedin.com/in/shahzaibhamid/" },
   ],
-  Resources: [
-    { label: "Hire a Certified Partner", href: "#" },
-    { label: "Become a Certified Partner", href: "#" },
-    { label: "Affiliate program", href: "#" },
-    { label: "Information security", href: "#" },
-    { label: "Company", href: "#" },
+  "Terms & policies": [
+    { label: "Terms of service", href: "/terms-of-service" },
+    { label: "Privacy policy", href: "/privacy-policy" },
+    { label: "Refund policy", href: "/refund-policy" },
   ],
 };
 

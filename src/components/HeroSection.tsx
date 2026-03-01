@@ -115,6 +115,8 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.button 
+              type="button"
+              onClick={() => window.open("https://calendly.com/code_squad/30min", "_blank")}
               className="group relative px-6 py-2.5 bg-gradient-to-r from-primary via-primary to-primary/80 text-primary-foreground text-sm font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 overflow-hidden"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
